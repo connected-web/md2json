@@ -2,9 +2,9 @@
   "name": "@connected-web/md2json",
   "version": "1.0.0",
   "description": "A functional library that takes a markdown body; and tries to create a JSON representation of the document.",
-  "main": "index.js",
+  "main": "src/md2json.js",
   "scripts": {
-    "test": "standard --env mocha",
+    "test": "standard --env mocha && mocha",
     "lint": "standard --fix --env mocha"
   },
   "keywords": [],
@@ -15,6 +15,8 @@
     "marked": "^3.0.7"
   },
   "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2",
     "standard": "^16.0.4"
   },
   "repository": {
