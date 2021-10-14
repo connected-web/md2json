@@ -99,6 +99,29 @@
           ]
         },
         {
+          "title": "Tokens",
+          "content": [
+            [
+              "const tokens = md2json.tokens('# Heading\\n\\nContent\\n\\n##Heading 1.1')",
+              "console.log(tokens)",
+              ""
+            ],
+            [
+              "k",
+              "Output:"
+            ],
+            [
+              "[",
+              "  { \"name\": \"h1\", \"text\": \"Heading\" },",
+              "  { \"name\": \"p\", \"text\": \"Content\"},",
+              "  { \"name\": \"h2\", \"text\": \"Heading 1.1\"}",
+              "]",
+              ""
+            ]
+          ],
+          "sections": []
+        },
+        {
           "title": "Approach",
           "content": [
             [

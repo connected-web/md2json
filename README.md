@@ -57,6 +57,22 @@ The top level section of the JSON output.
 
 The text string representing the markdown to be converted to JSON
 
+## Tokens
+
+```js
+const tokens = md2json.tokens('# Heading\n\nContent\n\n##Heading 1.1')
+console.log(tokens)
+```
+k
+Output:
+```json
+[
+  { "name": "h1", "text": "Heading" },
+  { "name": "p", "text": "Content"},
+  { "name": "h2", "text": "Heading 1.1"}
+]
+```
+
 ## Approach
 
 - Format parameters

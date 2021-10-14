@@ -22,4 +22,11 @@ function md2json (...params) {
   return json
 }
 
+md2json.tokens = (markdown) => {
+  const $dom = $createDomFromMarkdown(markdown)
+  const tokens = createTokensFromDom($dom)
+  const tokensOfInterest = throwAwayInvalidTokens(tokens)
+  return tokensOfInterest
+}
+
 module.exports = md2json
