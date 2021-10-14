@@ -34,6 +34,29 @@ describe('Markdown 2 Json', () => {
     expect(actual).to.deep.equal(expected)
   })
 
+  it('should convert a small section of md to json passed as an object', async () => {
+    const markdown = [
+      '# Heading',
+      'Basic content'
+    ].join('\n')
+    const actual = md2json({
+      title: 'My Markdown File',
+      markdown
+    })
+    const expected = {
+      title: 'My Markdown File',
+      content: [],
+      sections: [{
+        title: 'Heading',
+        content: [
+          'Basic content'
+        ],
+        sections: []
+      }]
+    }
+    expect(actual).to.deep.equal(expected)
+  })
+
   it('should convert markdown to json with a title', async () => {
     const filename = 'example-file-input.md'
     const source = await loadFixture('example-file-input.md')
