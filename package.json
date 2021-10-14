@@ -4,7 +4,8 @@
   "description": "A functional library that takes a markdown body; and tries to create a JSON representation of the document.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard --env mocha",
+    "lint": "standard --fix --env mocha"
   },
   "keywords": [],
   "author": "John Beech",
@@ -13,7 +14,9 @@
     "cheerio": "^1.0.0-rc.10",
     "marked": "^3.0.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "standard": "^16.0.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/connected-web/md2json.git"
