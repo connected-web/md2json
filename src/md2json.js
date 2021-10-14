@@ -22,8 +22,9 @@ function md2json (...params) {
   return json
 }
 
-md2json.tokens = (markdown) => {
-  const $dom = $createDomFromMarkdown(markdown)
+md2json.tokens = (...params) => {
+  const { md } = formatParams(params)
+  const $dom = $createDomFromMarkdown(md)
   const tokens = createTokensFromDom($dom)
   const tokensOfInterest = throwAwayInvalidTokens(tokens)
   return tokensOfInterest

@@ -99,6 +99,10 @@ Released under ISC.
 
 ## Changelog
 
+### 1.1.0
+
+- Add `.tokens(markdown)` method to API
+
 ### 1.0.0
 
 - First version ready for release

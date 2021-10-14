@@ -169,6 +169,15 @@
           "content": [],
           "sections": [
             {
+              "title": "1.1.0",
+              "content": [
+                [
+                  "Add .tokens(markdown) method to API"
+                ]
+              ],
+              "sections": []
+            },
+            {
               "title": "1.0.0",
               "content": [
                 [
