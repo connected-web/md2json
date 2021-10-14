@@ -1,4 +1,4 @@
-function createTokensFromDom($dom) {
+function createTokensFromDom ($dom) {
   const $items = $dom('*')
   const items = [...$items.map((i, el) => {
     const $el = $dom(el)

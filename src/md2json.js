@@ -3,7 +3,7 @@ const createTokensFromDom = require('./steps/createTokensFromDom')
 const throwAwayInvalidTokens = require('./steps/throwAwayInvalidTokens')
 const parseTokensIntoHierarchy = require('./steps/parseTokensIntoHierarchy')
 
-function md2json(title, md) {
+function md2json (title, md) {
   const $dom = $createDomFromMarkdown(md)
   const tokens = createTokensFromDom($dom)
   const tokensOfInterest = throwAwayInvalidTokens(tokens)
