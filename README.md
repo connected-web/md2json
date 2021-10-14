@@ -80,3 +80,10 @@ Released under ISC.
 - mocha
 - chai
 - standard
+
+## Changelog
+
+### 1.0.0
+
+- First version ready for release
+- Not perfect, but hopefully something people can work with

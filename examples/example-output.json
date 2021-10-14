@@ -54,7 +54,7 @@
           "title": "Source only API",
           "content": [
             [
-              "md2json(md)",
+              "md2json(markdown)",
               ""
             ]
           ],
@@ -64,7 +64,7 @@
           "title": "Title and source API",
           "content": [
             [
-              "md2json(title, md)",
+              "md2json(title, markdown)",
               ""
             ]
           ],
@@ -135,6 +135,22 @@
                   "mocha",
                   "chai",
                   "standard"
+                ]
+              ],
+              "sections": []
+            }
+          ]
+        },
+        {
+          "title": "Changelog",
+          "content": [],
+          "sections": [
+            {
+              "title": "1.0.0",
+              "content": [
+                [
+                  "First version ready for release",
+                  "Not perfect, but hopefully something people can work with"
                 ]
               ],
               "sections": []
