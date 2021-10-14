@@ -11,7 +11,7 @@ A functional library that takes a markdown body; and tries to create a JSON repr
 ## Usage
 
 Install:
-- `npm install md2json`
+- `npm install @connected-web/md2json`
 
 ```js
 const md2json = require('./src/md2json')
