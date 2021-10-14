@@ -4,7 +4,7 @@
   "description": "A functional library that takes a markdown body; and tries to create a JSON representation of the document.",
   "main": "src/md2json.js",
   "scripts": {
-    "test": "standard --env mocha && mocha",
+    "test": "standard --env mocha && mocha && node example",
     "lint": "standard --fix --env mocha"
   },
   "keywords": [],

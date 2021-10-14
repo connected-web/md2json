@@ -7,4 +7,4 @@ const json = md2json(filename, md)
 
 console.log('Markdown to Json:', json)
 
-fs.writeFileSync('test/fixtures/example-output.json', JSON.stringify(json, null, 2), 'utf8')
+fs.writeFileSync('examples/example-output.json', JSON.stringify(json, null, 2), 'utf8')

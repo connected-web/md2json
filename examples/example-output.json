@@ -1,0 +1,147 @@
+{
+  "title": "README.md",
+  "content": [],
+  "sections": [
+    {
+      "title": "Markdown 2 Json",
+      "content": [
+        "A functional library that takes a markdown body; and tries to create a JSON representation of the document."
+      ],
+      "sections": [
+        {
+          "title": "Supports",
+          "content": [
+            [
+              "Headings",
+              "Lists",
+              "Paragraphs"
+            ]
+          ],
+          "sections": []
+        },
+        {
+          "title": "Usage",
+          "content": [
+            "Install:",
+            [
+              "npm install @connected-web/md2json"
+            ],
+            [
+              "const md2json = require('./src/md2json')",
+              "const fs = require('fs')",
+              "",
+              "const filename = 'README.md'",
+              "const md = fs.readFileSync(filename, 'utf8')",
+              "const json = md2json(filename, md)",
+              "",
+              "console.log('Markdown to Json:', json)",
+              ""
+            ]
+          ],
+          "sections": []
+        },
+        {
+          "title": "Examples",
+          "content": [
+            [
+              "Example Output: examples/example-output.json",
+              "Test Output: examples/test-output.json"
+            ]
+          ],
+          "sections": []
+        },
+        {
+          "title": "Source only API",
+          "content": [
+            [
+              "md2json(md)",
+              ""
+            ]
+          ],
+          "sections": []
+        },
+        {
+          "title": "Title and source API",
+          "content": [
+            [
+              "md2json(title, md)",
+              ""
+            ]
+          ],
+          "sections": []
+        },
+        {
+          "title": "Options object API",
+          "content": [
+            [
+              "md2json({",
+              "  title: 'README.md',",
+              "  markdown: '# Heading\\n\\nContent'",
+              "})",
+              ""
+            ]
+          ],
+          "sections": [
+            {
+              "title": "Option : title",
+              "content": [
+                "The top level section of the JSON output."
+              ],
+              "sections": []
+            },
+            {
+              "title": "Option : markdown | md",
+              "content": [
+                "The text string representing the markdown to be converted to JSON"
+              ],
+              "sections": []
+            }
+          ]
+        },
+        {
+          "title": "Approach",
+          "content": [
+            [
+              "Format parameters",
+              "Render Markdown as HTML",
+              "Create DOM from Markdown",
+              "Create Tokens in the form: { name: el.tagName, text: el.text }",
+              "Parse Tokens into Hierarchy",
+              "Return JSON hierarchy"
+            ]
+          ],
+          "sections": []
+        },
+        {
+          "title": "Licenses",
+          "content": [
+            "Released under ISC."
+          ],
+          "sections": [
+            {
+              "title": "Dependencies",
+              "content": [
+                [
+                  "marked",
+                  "cheerio"
+                ]
+              ],
+              "sections": []
+            },
+            {
+              "title": "Development tools",
+              "content": [
+                [
+                  "mocha",
+                  "chai",
+                  "standard"
+                ]
+              ],
+              "sections": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

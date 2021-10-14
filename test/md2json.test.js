@@ -13,6 +13,10 @@ async function loadJsonFixture (fixture) {
   return JSON.parse(body)
 }
 
+async function writeJson (filename, data) {
+  await fs.writeFile(filename, JSON.stringify(data, null, 2), 'utf8')
+}
+
 describe('Markdown 2 Json', () => {
   it('should convert a small section of md to json', async () => {
     const source = [
@@ -62,7 +66,7 @@ describe('Markdown 2 Json', () => {
     const source = await loadFixture('example-file-input.md')
     const expected = await loadJsonFixture('expected-file-output.json')
     const actual = md2json(filename, source)
-    await fs.writeFile('output.json', JSON.stringify(actual, null, 2), 'utf8')
+    writeJson('examples/example-output.json', actual)
     expect(actual).to.deep.equal(expected)
   })
 })

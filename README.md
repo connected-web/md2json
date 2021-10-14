@@ -24,21 +24,24 @@ const json = md2json(filename, md)
 console.log('Markdown to Json:', json)
 ```
 
-## md2json API
+## Examples
 
-### Source only
+- Example Output: [`examples/example-output.json`](./examples/example-output.json)
+- Test Output: [`examples/test-output.json`](./examples/test-output.json)
 
-```js
-md2json(md)
-```
-
-### Title and source
+## Source only API
 
 ```js
-md2json(title, md)
+md2json(markdown)
 ```
 
-### Options object
+## Title and source API
+
+```js
+md2json(title, markdown)
+```
+
+## Options object API
 ```js
 md2json({
   title: 'README.md',
@@ -46,11 +49,11 @@ md2json({
 })
 ```
 
-### Option : title
+### Option : `title`
 
 The top level section of the JSON output.
 
-### Option : markdown | md
+### Option : `markdown` | `md`
 
 The text string representing the markdown to be converted to JSON
 
