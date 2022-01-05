@@ -14,7 +14,7 @@ Install:
 - `npm install @connected-web/md2json`
 
 ```js
-const md2json = require('./src/md2json')
+const md2json = require('@connected-web/md2json')
 const fs = require('fs')
 
 const filename = 'README.md'
