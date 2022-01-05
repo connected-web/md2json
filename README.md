@@ -63,7 +63,7 @@ The text string representing the markdown to be converted to JSON
 const tokens = md2json.tokens('# Heading\n\nContent\n\n##Heading 1.1')
 console.log(tokens)
 ```
-k
+
 Output:
 ```json
 [
