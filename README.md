@@ -99,6 +99,11 @@ Released under ISC.
 
 ## Changelog
 
+### 1.2.0
+
+- Fix failing tests based on `marked` interface
+- Add PR checking to project
+
 ### 1.1.0
 
 - Add `.tokens(markdown)` method to API
