@@ -1,5 +1,5 @@
 const cheerio = require('cheerio')
-const marked = require('marked')
+const { marked } = require('marked')
 
 function $createDomFromMarkdown (md) {
   const html = marked(md)

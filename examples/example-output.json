@@ -27,7 +27,7 @@
               "npm install @connected-web/md2json"
             ],
             [
-              "const md2json = require('./src/md2json')",
+              "const md2json = require('@connected-web/md2json')",
               "const fs = require('fs')",
               "",
               "const filename = 'README.md'",
@@ -106,10 +106,7 @@
               "console.log(tokens)",
               ""
             ],
-            [
-              "k",
-              "Output:"
-            ],
+            "Output:",
             [
               "[",
               "  { \"name\": \"h1\", \"text\": \"Heading\" },",
