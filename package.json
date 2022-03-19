@@ -13,15 +13,6 @@
   "keywords": [],
   "author": "John Beech",
   "license": "ISC",
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.10",
-    "marked": "^4.0.10"
-  },
-  "devDependencies": {
-    "chai": "^4.3.4",
-    "mocha": "^9.1.2",
-    "standard": "^16.0.4"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/connected-web/md2json.git"
@@ -29,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/connected-web/md2json/issues"
   },
-  "homepage": "https://github.com/connected-web/md2json#readme"
+  "homepage": "https://github.com/connected-web/md2json#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "marked": "^4.0.12"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^9.2.2",
+    "standard": "^16.0.4"
+  }
 }
