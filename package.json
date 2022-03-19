@@ -7,6 +7,7 @@
     "src"
   ],
   "scripts": {
+    "build": "echo No build required",
     "test": "standard --env mocha && mocha && node example",
     "lint": "standard --fix --env mocha"
   },
