@@ -1,202 +1,89 @@
 {
-  "title": "README.md",
+  "title": "example-file-input.md",
   "content": [],
   "sections": [
     {
-      "title": "Markdown 2 Json",
+      "title": "Heading 1",
       "content": [
-        "A functional library that takes a markdown body; and tries to create a JSON representation of the document."
+        "Document introduction",
+        [
+          "List item 1",
+          "List item 2",
+          "List item 3"
+        ]
       ],
       "sections": [
         {
-          "title": "Supports",
+          "title": "Heading 1.1",
           "content": [
-            [
-              "Headings",
-              "Lists",
-              "Paragraphs"
-            ]
+            "Content in heading 1.1"
           ],
           "sections": []
         },
         {
-          "title": "Usage",
+          "title": "Heading 1.2",
           "content": [
-            "Install:",
-            [
-              "npm install @connected-web/md2json"
-            ],
-            [
-              "const md2json = require('@connected-web/md2json')",
-              "const fs = require('fs')",
-              "",
-              "const filename = 'README.md'",
-              "const md = fs.readFileSync(filename, 'utf8')",
-              "const json = md2json(filename, md)",
-              "",
-              "console.log('Markdown to Json:', json)",
-              ""
-            ]
+            "Content in heading 1.2"
           ],
           "sections": []
-        },
+        }
+      ]
+    },
+    {
+      "title": "Heading 2",
+      "content": [
+        "Important information",
+        [
+          "List A",
+          "List B",
+          "List C"
+        ]
+      ],
+      "sections": [
         {
-          "title": "Examples",
+          "title": "Heading 2.1",
           "content": [
+            "Content introducing 2.1:",
             [
-              "Example Output: examples/example-output.json",
-              "Test Output: examples/test-output.json"
-            ]
-          ],
-          "sections": []
-        },
-        {
-          "title": "Source only API",
-          "content": [
-            [
-              "md2json(markdown)",
-              ""
-            ]
-          ],
-          "sections": []
-        },
-        {
-          "title": "Title and source API",
-          "content": [
-            [
-              "md2json(title, markdown)",
-              ""
-            ]
-          ],
-          "sections": []
-        },
-        {
-          "title": "Options object API",
-          "content": [
-            [
-              "md2json({",
-              "  title: 'README.md',",
-              "  markdown: '# Heading\\n\\nContent'",
-              "})",
-              ""
-            ]
-          ],
-          "sections": [
-            {
-              "title": "Option : title",
-              "content": [
-                "The top level section of the JSON output."
-              ],
-              "sections": []
-            },
-            {
-              "title": "Option : markdown | md",
-              "content": [
-                "The text string representing the markdown to be converted to JSON"
-              ],
-              "sections": []
-            }
-          ]
-        },
-        {
-          "title": "Tokens",
-          "content": [
-            [
-              "const tokens = md2json.tokens('# Heading\\n\\nContent\\n\\n##Heading 1.1')",
-              "console.log(tokens)",
+              "code block",
+              "containing",
+              "code",
+              "to execute",
+              "line by line",
               ""
             ],
-            "Output:",
-            [
-              "[",
-              "  { \"name\": \"h1\", \"text\": \"Heading\" },",
-              "  { \"name\": \"p\", \"text\": \"Content\"},",
-              "  { \"name\": \"h2\", \"text\": \"Heading 1.1\"}",
-              "]",
-              ""
-            ]
-          ],
-          "sections": []
-        },
-        {
-          "title": "Approach",
-          "content": [
-            [
-              "Format parameters",
-              "Render Markdown as HTML",
-              "Create DOM from Markdown",
-              "Create Tokens in the form: { name: el.tagName, text: el.text }",
-              "Parse Tokens into Hierarchy",
-              "Return JSON hierarchy"
-            ]
-          ],
-          "sections": []
-        },
-        {
-          "title": "Licenses",
-          "content": [
-            "Released under ISC."
+            "Content summary at bottom of 2.1."
           ],
           "sections": [
             {
-              "title": "Dependencies",
+              "title": "Heading 2.1.1",
               "content": [
-                [
-                  "marked",
-                  "cheerio"
-                ]
+                "Content for section 2.1.1"
               ],
               "sections": []
             },
             {
-              "title": "Development tools",
+              "title": "Heading 2.1.2",
               "content": [
-                [
-                  "mocha",
-                  "chai",
-                  "standard"
-                ]
-              ],
-              "sections": []
-            }
-          ]
-        },
-        {
-          "title": "Changelog",
-          "content": [],
-          "sections": [
-            {
-              "title": "1.2.0",
-              "content": [
-                [
-                  "Fix failing tests based on marked interface",
-                  "Add PR checking to project"
-                ]
-              ],
-              "sections": []
-            },
-            {
-              "title": "1.1.0",
-              "content": [
-                [
-                  "Add .tokens(markdown) method to API"
-                ]
-              ],
-              "sections": []
-            },
-            {
-              "title": "1.0.0",
-              "content": [
-                [
-                  "First version ready for release",
-                  "Not perfect, but hopefully something people can work with"
-                ]
+                "Content for section 2.1.2"
               ],
               "sections": []
             }
           ]
         }
       ]
+    },
+    {
+      "title": "Heading 3",
+      "content": [
+        "Change log:",
+        [
+          "Changes",
+          "Additions",
+          "Deletions"
+        ]
+      ],
+      "sections": []
     }
   ]
 }

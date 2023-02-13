@@ -57,6 +57,13 @@ The top level section of the JSON output.
 
 The text string representing the markdown to be converted to JSON
 
+### Option : `outputFormat`
+
+The type of formatting to output.
+
+- `{ outputFormat: 'default' }` : Empty string will default to default - nested structure of markdown as JSON
+- `{ outputFormat: 'json2md' }` : Token format compatable with [IonicaBizau/json2md ](https://github.com/IonicaBizau/json2md) (npm: [json2md](https://www.npmjs.com/package/json2md))
+
 ## Tokens
 
 ```js
@@ -98,6 +105,10 @@ Released under ISC.
 - standard
 
 ## Changelog
+
+### 1.3.0
+
+- Add option to support json2md compatible output
 
 ### 1.2.0
 
