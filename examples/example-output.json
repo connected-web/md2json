@@ -166,6 +166,16 @@
           "content": [],
           "sections": [
             {
+              "title": "1.2.0",
+              "content": [
+                [
+                  "Fix failing tests based on marked interface",
+                  "Add PR checking to project"
+                ]
+              ],
+              "sections": []
+            },
+            {
               "title": "1.1.0",
               "content": [
                 [
