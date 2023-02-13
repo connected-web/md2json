@@ -1,222 +1,209 @@
-{
-  "title": "Example 2 - Markdown to json2md format",
-  "content": [],
-  "sections": [
-    {
-      "title": "Markdown 2 Json",
-      "content": [
-        "A functional library that takes a markdown body; and tries to create a JSON representation of the document."
-      ],
-      "sections": [
-        {
-          "title": "Supports",
-          "content": [
-            [
-              "Headings",
-              "Lists",
-              "Paragraphs"
-            ]
-          ],
-          "sections": []
-        },
-        {
-          "title": "Usage",
-          "content": [
-            "Install:",
-            [
-              "npm install @connected-web/md2json"
-            ],
-            [
-              "const md2json = require('@connected-web/md2json')",
-              "const fs = require('fs')",
-              "",
-              "const filename = 'README.md'",
-              "const md = fs.readFileSync(filename, 'utf8')",
-              "const json = md2json(filename, md)",
-              "",
-              "console.log('Markdown to Json:', json)",
-              ""
-            ]
-          ],
-          "sections": []
-        },
-        {
-          "title": "Examples",
-          "content": [
-            [
-              "Example Output: examples/example-output.json",
-              "Test Output: examples/test-output.json"
-            ]
-          ],
-          "sections": []
-        },
-        {
-          "title": "Source only API",
-          "content": [
-            [
-              "md2json(markdown)",
-              ""
-            ]
-          ],
-          "sections": []
-        },
-        {
-          "title": "Title and source API",
-          "content": [
-            [
-              "md2json(title, markdown)",
-              ""
-            ]
-          ],
-          "sections": []
-        },
-        {
-          "title": "Options object API",
-          "content": [
-            [
-              "md2json({",
-              "  title: 'README.md',",
-              "  markdown: '# Heading\\n\\nContent'",
-              "})",
-              ""
-            ]
-          ],
-          "sections": [
-            {
-              "title": "Option : title",
-              "content": [
-                "The top level section of the JSON output."
-              ],
-              "sections": []
-            },
-            {
-              "title": "Option : markdown | md",
-              "content": [
-                "The text string representing the markdown to be converted to JSON"
-              ],
-              "sections": []
-            },
-            {
-              "title": "Option : outputFormat",
-              "content": [
-                "The type of formatting to output.",
-                [
-                  "{ outputFormat: 'default' } : Empty string will default to default - nested structure of markdown as JSON",
-                  "{ outputFormat: 'json2md' } : Token format compatable with IonicaBizau/json2md  (npm: json2md)"
-                ]
-              ],
-              "sections": []
-            }
-          ]
-        },
-        {
-          "title": "Tokens",
-          "content": [
-            [
-              "const tokens = md2json.tokens('# Heading\\n\\nContent\\n\\n##Heading 1.1')",
-              "console.log(tokens)",
-              ""
-            ],
-            "Output:",
-            [
-              "[",
-              "  { \"name\": \"h1\", \"text\": \"Heading\" },",
-              "  { \"name\": \"p\", \"text\": \"Content\"},",
-              "  { \"name\": \"h2\", \"text\": \"Heading 1.1\"}",
-              "]",
-              ""
-            ]
-          ],
-          "sections": []
-        },
-        {
-          "title": "Approach",
-          "content": [
-            [
-              "Format parameters",
-              "Render Markdown as HTML",
-              "Create DOM from Markdown",
-              "Create Tokens in the form: { name: el.tagName, text: el.text }",
-              "Parse Tokens into Hierarchy",
-              "Return JSON hierarchy"
-            ]
-          ],
-          "sections": []
-        },
-        {
-          "title": "Licenses",
-          "content": [
-            "Released under ISC."
-          ],
-          "sections": [
-            {
-              "title": "Dependencies",
-              "content": [
-                [
-                  "marked",
-                  "cheerio"
-                ]
-              ],
-              "sections": []
-            },
-            {
-              "title": "Development tools",
-              "content": [
-                [
-                  "mocha",
-                  "chai",
-                  "standard"
-                ]
-              ],
-              "sections": []
-            }
-          ]
-        },
-        {
-          "title": "Changelog",
-          "content": [],
-          "sections": [
-            {
-              "title": "1.3.0",
-              "content": [
-                [
-                  "Add option to support json2md compatible output"
-                ]
-              ],
-              "sections": []
-            },
-            {
-              "title": "1.2.0",
-              "content": [
-                [
-                  "Fix failing tests based on marked interface",
-                  "Add PR checking to project"
-                ]
-              ],
-              "sections": []
-            },
-            {
-              "title": "1.1.0",
-              "content": [
-                [
-                  "Add .tokens(markdown) method to API"
-                ]
-              ],
-              "sections": []
-            },
-            {
-              "title": "1.0.0",
-              "content": [
-                [
-                  "First version ready for release",
-                  "Not perfect, but hopefully something people can work with"
-                ]
-              ],
-              "sections": []
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "h1": "Markdown 2 Json"
+  },
+  {
+    "p": "A functional library that takes a markdown body; and tries to create a JSON representation of the document."
+  },
+  {
+    "h2": "Supports"
+  },
+  {
+    "ul": "\nHeadings\nLists\nParagraphs\n"
+  },
+  {
+    "li": "Headings"
+  },
+  {
+    "li": "Lists"
+  },
+  {
+    "li": "Paragraphs"
+  },
+  {
+    "h2": "Usage"
+  },
+  {
+    "p": "Install:"
+  },
+  {
+    "ul": "\nnpm install @connected-web/md2json\n"
+  },
+  {
+    "li": "npm install @connected-web/md2json"
+  },
+  {
+    "pre": "const md2json = require('@connected-web/md2json')\nconst fs = require('fs')\n\nconst filename = 'README.md'\nconst md = fs.readFileSync(filename, 'utf8')\nconst json = md2json(filename, md)\n\nconsole.log('Markdown to Json:', json)\n"
+  },
+  {
+    "h2": "Examples"
+  },
+  {
+    "ul": "\nExample Output: examples/example-output.json\nTest Output: examples/test-output.json\n"
+  },
+  {
+    "li": "Example Output: examples/example-output.json"
+  },
+  {
+    "li": "Test Output: examples/test-output.json"
+  },
+  {
+    "h2": "Source only API"
+  },
+  {
+    "pre": "md2json(markdown)\n"
+  },
+  {
+    "h2": "Title and source API"
+  },
+  {
+    "pre": "md2json(title, markdown)\n"
+  },
+  {
+    "h2": "Options object API"
+  },
+  {
+    "pre": "md2json({\n  title: 'README.md',\n  markdown: '# Heading\\n\\nContent'\n})\n"
+  },
+  {
+    "h3": "Option : title"
+  },
+  {
+    "p": "The top level section of the JSON output."
+  },
+  {
+    "h3": "Option : markdown | md"
+  },
+  {
+    "p": "The text string representing the markdown to be converted to JSON"
+  },
+  {
+    "h3": "Option : outputFormat"
+  },
+  {
+    "p": "The type of formatting to output."
+  },
+  {
+    "ul": "\n{ outputFormat: 'default' } : Empty string will default to default - nested structure of markdown as JSON\n{ outputFormat: 'json2md' } : Token format compatable with IonicaBizau/json2md  (npm: json2md)\n"
+  },
+  {
+    "li": "{ outputFormat: 'default' } : Empty string will default to default - nested structure of markdown as JSON"
+  },
+  {
+    "li": "{ outputFormat: 'json2md' } : Token format compatable with IonicaBizau/json2md  (npm: json2md)"
+  },
+  {
+    "h2": "Tokens"
+  },
+  {
+    "pre": "const tokens = md2json.tokens('# Heading\\n\\nContent\\n\\n##Heading 1.1')\nconsole.log(tokens)\n"
+  },
+  {
+    "p": "Output:"
+  },
+  {
+    "pre": "[\n  { \"name\": \"h1\", \"text\": \"Heading\" },\n  { \"name\": \"p\", \"text\": \"Content\"},\n  { \"name\": \"h2\", \"text\": \"Heading 1.1\"}\n]\n"
+  },
+  {
+    "h2": "Approach"
+  },
+  {
+    "ul": "\nFormat parameters\nRender Markdown as HTML\nCreate DOM from Markdown\nCreate Tokens in the form: { name: el.tagName, text: el.text }\nParse Tokens into Hierarchy\nReturn JSON hierarchy\n"
+  },
+  {
+    "li": "Format parameters"
+  },
+  {
+    "li": "Render Markdown as HTML"
+  },
+  {
+    "li": "Create DOM from Markdown"
+  },
+  {
+    "li": "Create Tokens in the form: { name: el.tagName, text: el.text }"
+  },
+  {
+    "li": "Parse Tokens into Hierarchy"
+  },
+  {
+    "li": "Return JSON hierarchy"
+  },
+  {
+    "h2": "Licenses"
+  },
+  {
+    "p": "Released under ISC."
+  },
+  {
+    "h3": "Dependencies"
+  },
+  {
+    "ul": "\nmarked\ncheerio\n"
+  },
+  {
+    "li": "marked"
+  },
+  {
+    "li": "cheerio"
+  },
+  {
+    "h3": "Development tools"
+  },
+  {
+    "ul": "\nmocha\nchai\nstandard\n"
+  },
+  {
+    "li": "mocha"
+  },
+  {
+    "li": "chai"
+  },
+  {
+    "li": "standard"
+  },
+  {
+    "h2": "Changelog"
+  },
+  {
+    "h3": "1.3.0"
+  },
+  {
+    "ul": "\nAdd option to support json2md compatible output\n"
+  },
+  {
+    "li": "Add option to support json2md compatible output"
+  },
+  {
+    "h3": "1.2.0"
+  },
+  {
+    "ul": "\nFix failing tests based on marked interface\nAdd PR checking to project\n"
+  },
+  {
+    "li": "Fix failing tests based on marked interface"
+  },
+  {
+    "li": "Add PR checking to project"
+  },
+  {
+    "h3": "1.1.0"
+  },
+  {
+    "ul": "\nAdd .tokens(markdown) method to API\n"
+  },
+  {
+    "li": "Add .tokens(markdown) method to API"
+  },
+  {
+    "h3": "1.0.0"
+  },
+  {
+    "ul": "\nFirst version ready for release\nNot perfect, but hopefully something people can work with\n"
+  },
+  {
+    "li": "First version ready for release"
+  },
+  {
+    "li": "Not perfect, but hopefully something people can work with"
+  }
+]

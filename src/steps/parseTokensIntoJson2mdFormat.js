@@ -1,5 +1,10 @@
 function parseTokensIntoJson2mdFormat (title, tokens) {
-  const mappedTokens = tokens.map(token => ({ [token.name]: token.text }))
+  const mappedTokens = tokens.map(token => {
+    const name = token.name
+    const item = { ...token }
+    delete item.name
+    return (item.text) ? { [name]: item.text } : { [name]: item }
+  })
   return mappedTokens
 }
 

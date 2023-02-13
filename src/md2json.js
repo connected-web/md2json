@@ -41,8 +41,7 @@ md2json.tokens = (...params) => {
   return tokensOfInterest
 }
 
-
-md2json.json2mdTokens = (...params) {
+md2json.json2mdTokens = (...params) => {
   const { md, title, outputFormat } = formatParams(params)
   const $dom = $createDomFromMarkdown(md)
   const tokens = createTokensFromDom($dom)

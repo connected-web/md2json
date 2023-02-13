@@ -1,4 +1,10 @@
 function simpleText (item) {
+  if (item.text) {
+    item.text = item.text.trim()
+  }
+  if (!item.text) {
+    return false
+  }
   return item
 }
 
@@ -6,11 +12,11 @@ function listItem (item) {
   return item
 }
 
-function image (item) {
+function imageItem (item) {
   return item
 }
 
-function table (item) {
+function tableBlock (item) {
   return item
 }
 
@@ -32,8 +38,8 @@ const actions = {
   pre: simpleText,
   blockquote: simpleText,
   li: listItem,
-  img: image,
-  table: table,
+  img: imageItem,
+  table: tableBlock,
   ul: listBlock,
   ol: listBlock,
   default: throwAwayItem
@@ -45,6 +51,7 @@ function formatValidTokens (tokens) {
     const result = action(item)
     return result
   }).filter(n => n)
+  console.log('Tokens of interest:', { tokensOfInterest })
   return tokensOfInterest
 }
 

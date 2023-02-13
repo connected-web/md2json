@@ -3,37 +3,46 @@
     "h1": "JSON To Markdown"
   },
   {
-    "blockquote": "\nA JSON to Markdown converter.\n"
+    "blockquote": "A JSON to Markdown converter."
   },
   {
     "p": "A JSON to Markdown converter."
   },
   {
-    "p": "\n"
+    "img": {
+      "source": "https://example.com/some-image.png",
+      "title": "Some image"
+    }
   },
   {
-    "img": ""
+    "img": {
+      "source": "https://example.com/some-image.png",
+      "title": "Some image"
+    }
   },
   {
-    "img": ""
+    "img": {
+      "source": "https://example.com/some-image1.png",
+      "title": "Another image"
+    }
   },
   {
-    "p": "\n"
+    "img": {
+      "source": "https://example.com/some-image1.png",
+      "title": "Another image"
+    }
   },
   {
-    "img": ""
+    "img": {
+      "source": "https://example.com/some-image2.png",
+      "title": "Yet another image"
+    }
   },
   {
-    "img": ""
-  },
-  {
-    "p": "\n"
-  },
-  {
-    "img": ""
-  },
-  {
-    "img": ""
+    "img": {
+      "source": "https://example.com/some-image2.png",
+      "title": "Yet another image"
+    }
   },
   {
     "h2": "Features"
@@ -72,7 +81,7 @@
     "p": "Below you can see a code block example."
   },
   {
-    "pre": "function sum (a, b) {\n   return a + b\n}\nsum(1, 2)\n"
+    "pre": "function sum (a, b) {\n   return a + b\n}\nsum(1, 2)"
   },
   {
     "table": "\n\n\na\nb\n\n\n\ncol1\ncol2\n\n"
