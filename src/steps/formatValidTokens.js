@@ -51,7 +51,6 @@ function formatValidTokens (tokens) {
     const result = action(item)
     return result
   }).filter(n => n)
-  console.log('Tokens of interest:', { tokensOfInterest })
   return tokensOfInterest
 }
 
