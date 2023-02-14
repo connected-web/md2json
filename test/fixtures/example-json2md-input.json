@@ -8,16 +8,19 @@
   {
     "img": [
       {
+        "source": "https://example.com/some-image.png",
         "title": "Some image",
-        "source": "https://example.com/some-image.png"
+        "alt": ""
       },
       {
+        "source": "https://example.com/some-image1.png",
         "title": "Another image",
-        "source": "https://example.com/some-image1.png"
+        "alt": ""
       },
       {
+        "source": "https://example.com/some-image2.png",
         "title": "Yet another image",
-        "source": "https://example.com/some-image2.png"
+        "alt": ""
       }
     ]
   },

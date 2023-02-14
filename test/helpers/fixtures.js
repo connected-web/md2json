@@ -15,4 +15,8 @@ async function writeJson (filename, data) {
   await fs.writeFile(filename, JSON.stringify(data, null, 2), 'utf8')
 }
 
-module.exports = { loadFixture, loadJsonFixture, writeJson }
+async function writeText (filename, data) {
+  await fs.writeFile(filename, data, 'utf8')
+}
+
+module.exports = { loadFixture, loadJsonFixture, writeJson, writeText }
