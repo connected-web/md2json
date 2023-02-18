@@ -51,7 +51,15 @@
     "p": "Below you can see a code block example."
   },
   {
-    "pre": "function sum (a, b) {\n   return a + b\n}\nsum(1, 2)"
+    "code": {
+      "content": [
+        "function sum (a, b) {",
+        "   return a + b",
+        "}",
+        "sum(1, 2)"
+      ],
+      "language": "js"
+    }
   },
   {
     "table": [

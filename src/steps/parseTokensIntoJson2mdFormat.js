@@ -4,17 +4,34 @@
   See: https://github.com/IonicaBizau/json2md/issues/97
 */
 
+const mapModifiers = {
+  default ({ item, name }) {
+    delete item.name
+    return (item.text) ? { [name]: item.text } : { [name]: item }
+  },
+  code ({ item, name }) {
+    delete item.name
+    const content = (item?.text + '').trim().split('\n')
+    const language = item.language
+    return { [name]: { content, language } }
+  }
+}
+
 function mapTokens (tokens) {
   const mappedTokens = tokens.map(token => {
     const name = token.name
     const item = { ...token }
-    delete item.name
-    return (item.text) ? { [name]: item.text } : { [name]: item }
+    const modifier = mapModifiers[name] ?? mapModifiers.default
+
+    if (typeof modifier === 'function') {
+      token = modifier({ item, name })
+    }
+    return token
   })
   return mappedTokens
 }
 
-const modifiers = {
+const groupModifiers = {
   img: ({ token, name, index, tokens }) => {
     token[name].alt = token[name].alt ?? ''
     skipNextToken({ index, tokens })
@@ -56,11 +73,13 @@ function groupTokens (tokens) {
     const name = Object.keys(token)[0]
     const previous = acc[acc.length - 1] ?? {}
 
-    console.log('Group tokens:', { name, previous, token })
-
-    const modifier = modifiers[name]
+    const modifier = groupModifiers[name]
     if (typeof modifier === 'function') {
       token = modifier({ token, name, index, tokens })
+    }
+
+    if (!token) {
+      return acc
     }
 
     if (previous[name]) {

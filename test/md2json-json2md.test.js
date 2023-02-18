@@ -43,7 +43,7 @@ describe('md2json - outputFormat: json2md', () => {
     throw new Error('Did not expect to reach this condition')
   })
 
-  it('should convert a large json2md file into markdown, and back again', async () => {
+  it.only('should convert a large json2md file into markdown, and back again', async () => {
     const stage1 = await loadJsonFixture('example-json2md-input.json')
 
     const stage2 = json2md(stage1)

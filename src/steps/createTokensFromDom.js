@@ -18,6 +18,12 @@ function createTokensFromDom ($dom) {
     if ($el.attr('title')) {
       token.title = $el.attr('title')
     }
+    if ($el.attr('class')) {
+      const className = $el.attr('class')
+      if (className.includes('language-')) {
+        token.language = className.replace('language-', '')
+      }
+    }
     return token
   })]
   return items

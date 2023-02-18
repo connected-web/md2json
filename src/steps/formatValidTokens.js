@@ -8,6 +8,10 @@ function simpleText (item) {
   return item
 }
 
+function codeBlock (item) {
+  return item
+}
+
 function listItem (item) {
   return item
 }
@@ -35,8 +39,8 @@ const actions = {
   h4: simpleText,
   h5: simpleText,
   p: simpleText,
-  pre: simpleText,
   blockquote: simpleText,
+  code: codeBlock,
   li: listItem,
   img: imageItem,
   table: tableBlock,
