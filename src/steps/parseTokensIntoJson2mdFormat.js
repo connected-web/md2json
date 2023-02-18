@@ -32,17 +32,17 @@ function mapTokens (tokens) {
 }
 
 const groupModifiers = {
-  img: ({ token, name, index, tokens }) => {
+  img ({ token, name, index, tokens }) {
     token[name].alt = token[name].alt ?? ''
     skipNextToken({ index, tokens })
     skipNextToken({ index: index + 1, tokens })
     return token
   },
-  blockquote: ({ token, index, tokens }) => {
+  blockquote ({ token, index, tokens }) {
     skipNextToken({ index, tokens })
     return token
   },
-  ol: ({ token, name, index, tokens }) => {
+  ol ({ token, name, index, tokens }) {
     const listItems = token[name].trim().split('\n')
     for (let i = 0; i < listItems.length; i++) {
       skipNextToken({ index: index + i, tokens })
@@ -50,13 +50,19 @@ const groupModifiers = {
     token[name] = listItems
     return token
   },
-  ul: ({ token, name, index, tokens }) => {
+  ul ({ token, name, index, tokens }) {
     const listItems = token[name].trim().split('\n')
     for (let i = 0; i < listItems.length; i++) {
       skipNextToken({ index: index + i, tokens })
     }
     token[name] = listItems
     return token
+  },
+  th ({ token, name, index, tokens }) {
+
+  },
+  td ({ token, name, index, tokens }) {
+
   }
 }
 
@@ -65,6 +71,7 @@ function skipNextToken ({ index, tokens }) {
 }
 
 function groupTokens (tokens) {
+  let activeTable, activeRow
   const groupedTokens = tokens.reduce((acc, token, index, list) => {
     if (token.skip) {
       return acc
@@ -72,6 +79,29 @@ function groupTokens (tokens) {
 
     const name = Object.keys(token)[0]
     const previous = acc[acc.length - 1] ?? {}
+    const text = token[name]
+
+    if (name === 'table') {
+      activeTable = { table: { headers: [], rows: [] } }
+      acc.push(activeTable)
+      return acc
+    } else if (name === 'tr') {
+      if (activeTable && activeTable.table.headers.length > 0) {
+        activeRow = {}
+        activeTable.table.rows.push(activeRow)
+      }
+      return acc
+    } else if (name === 'th') {
+      activeTable.table.headers.push(text)
+      return acc
+    } else if (name === 'td') {
+      if (activeRow) {
+        const columnCount = Object.keys(activeRow ?? {}).length
+        const columnKey = activeTable?.table?.headers[columnCount] ?? columnCount
+        activeRow[columnKey] = text
+      }
+      return acc
+    }
 
     const modifier = groupModifiers[name]
     if (typeof modifier === 'function') {

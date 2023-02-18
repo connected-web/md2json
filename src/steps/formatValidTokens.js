@@ -24,6 +24,18 @@ function tableBlock (item) {
   return item
 }
 
+function tableRow (item) {
+  return item
+}
+
+function tableHeading (item) {
+  return item
+}
+
+function tableCell (item) {
+  return item
+}
+
 function listBlock (item) {
   return item
 }
@@ -44,6 +56,9 @@ const actions = {
   li: listItem,
   img: imageItem,
   table: tableBlock,
+  tr: tableRow,
+  th: tableHeading,
+  td: tableCell,
   ul: listBlock,
   ol: listBlock,
   default: throwAwayItem

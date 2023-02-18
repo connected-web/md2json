@@ -25,10 +25,10 @@ describe('md2json - outputFormat: json2md', () => {
       { p: 'Basic content' }
     ]
     const stage2 = json2md(stage1)
-    console.log('Created md from json:')
-    console.log(stage2)
+    // console.log('Created md from json:')
+    // console.log(stage2)
 
-    const stage3 = md2json({ md: stage2, outputFormat: 'json2md' })
+    const stage3 = md2json.json2mdTokens({ md: stage2 })
 
     expect(stage1).to.deep.equal(stage3)
   })
@@ -43,12 +43,12 @@ describe('md2json - outputFormat: json2md', () => {
     throw new Error('Did not expect to reach this condition')
   })
 
-  it.only('should convert a large json2md file into markdown, and back again', async () => {
+  it('should convert a large json2md file into markdown, and back again', async () => {
     const stage1 = await loadJsonFixture('example-json2md-input.json')
 
     const stage2 = json2md(stage1)
-    console.log('Created md from json:')
-    console.log(stage2)
+    // console.log('Created md from json:')
+    // console.log(stage2)
     const brokenLines = [
       '![](https://example.com/some-image.png "Some image")\n',
       '![](https://example.com/some-image1.png "Another image")\n',

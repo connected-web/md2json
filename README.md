@@ -80,6 +80,16 @@ Output:
 ]
 ```
 
+## Tokens for json2md 
+
+Instead of using the `outputFormat: json2md` option compatable with [IonicaBizau/json2md ](https://github.com/IonicaBizau/json2md) (npm: [json2md](https://www.npmjs.com/package/json2md)), you can directly call this method:
+
+```js
+const tokens = md2json
+```
+
+
+
 ## Approach
 
 - Format parameters

@@ -62,9 +62,17 @@
     }
   },
   {
-    "table": [
-      "\n\n\na\nb\n\n\n\ncol1\ncol2\n\n",
-      "\n\n\na\nb\n\n\n\ncol1\ncol2\n\n"
-    ]
+    "table": {
+      "headers": [
+        "a",
+        "b"
+      ],
+      "rows": [
+        {
+          "a": "col1",
+          "b": "col2"
+        }
+      ]
+    }
   }
 ]
