@@ -85,10 +85,24 @@ Output:
 Instead of using the `outputFormat: json2md` option compatable with [IonicaBizau/json2md ](https://github.com/IonicaBizau/json2md) (npm: [json2md](https://www.npmjs.com/package/json2md)), you can directly call this method:
 
 ```js
-const tokens = md2json
+const tokens = md2json.json2mdTokens('# Heading\n\nContent\n\n##Heading 1.1')
+console.log(tokens)
 ```
 
-
+Output:
+```json
+[
+  {
+    "h1": "Heading"
+  },
+  {
+    "p": [
+      "Content",
+      "##Heading 1.1"
+    ]
+  }
+]
+```
 
 ## Approach
 
@@ -118,7 +132,8 @@ Released under ISC.
 
 ### 1.3.0
 
-- Add option to support json2md compatible output
+- Add options to support json2md compatible output
+- Support a broader range of HTML tokens, including blockquote, img, code, table, tr, th, td
 
 ### 1.2.0
 
