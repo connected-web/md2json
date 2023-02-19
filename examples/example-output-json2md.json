@@ -171,7 +171,8 @@
   {
     "code": {
       "content": [
-        "const tokens = md2json.tokens('# Heading\\n\\nContent\\n\\n##Heading 1.1')",
+        "const md2json = require('@connected-web/md2json')",
+        "const tokens = md2json.tokens('# Heading\\n\\nContent\\n\\n## Heading 1.1')",
         "console.log(tokens)"
       ],
       "language": "js"
@@ -184,9 +185,18 @@
     "code": {
       "content": [
         "[",
-        "  { \"name\": \"h1\", \"text\": \"Heading\" },",
-        "  { \"name\": \"p\", \"text\": \"Content\"},",
-        "  { \"name\": \"h2\", \"text\": \"Heading 1.1\"}",
+        "  {",
+        "    \"name\": \"h1\",",
+        "    \"text\": \"Heading\"",
+        "  },",
+        "  {",
+        "    \"name\": \"p\",",
+        "    \"text\": \"Content\"",
+        "  },",
+        "  {",
+        "    \"name\": \"h2\",",
+        "    \"text\": \"Heading 1.1\"",
+        "  }",
         "]"
       ],
       "language": "json"
@@ -207,11 +217,47 @@
       },
       {
         "content": [
-          "const tokens = md2json"
+          "const md2json = require('@connected-web/md2json')",
+          "const tokens = md2json.json2mdTokens('# Heading\\n\\nContent\\n\\n## Heading 1.1')",
+          "console.log(tokens)"
         ],
         "language": "js"
       }
     ]
+  },
+  {
+    "p": "Output:"
+  },
+  {
+    "code": {
+      "content": [
+        "[",
+        "  {",
+        "    \"h1\": \"Heading\"",
+        "  },",
+        "  {",
+        "    \"p\": \"Content\"",
+        "  },",
+        "  {",
+        "    \"h2\": \"Heading 1.1\"",
+        "  }",
+        "]"
+      ],
+      "language": "json"
+    }
+  },
+  {
+    "p": "You can then feed these tokens back into json2md to create markdown again."
+  },
+  {
+    "code": {
+      "content": [
+        "json2md"
+      ]
+    }
+  },
+  {
+    "p": "Not all formats and formatting are supported; this isn't guarenteed as a fully backwards compatable transformation - but please raise an issue with an example."
   },
   {
     "h2": "Approach"
@@ -262,7 +308,8 @@
   },
   {
     "ul": [
-      "Add option to support json2md compatible output"
+      "Add options to support json2md compatible output",
+      "Support a broader range of HTML tokens, including blockquote, img, code, table, tr, th, td"
     ]
   },
   {
