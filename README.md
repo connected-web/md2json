@@ -67,16 +67,26 @@ The type of formatting to output.
 ## Tokens
 
 ```js
-const tokens = md2json.tokens('# Heading\n\nContent\n\n##Heading 1.1')
+const md2json = require('@connected-web/md2json')
+const tokens = md2json.tokens('# Heading\n\nContent\n\n## Heading 1.1')
 console.log(tokens)
 ```
 
 Output:
 ```json
 [
-  { "name": "h1", "text": "Heading" },
-  { "name": "p", "text": "Content"},
-  { "name": "h2", "text": "Heading 1.1"}
+  {
+    "name": "h1",
+    "text": "Heading"
+  },
+  {
+    "name": "p",
+    "text": "Content"
+  },
+  {
+    "name": "h2",
+    "text": "Heading 1.1"
+  }
 ]
 ```
 
@@ -85,7 +95,8 @@ Output:
 Instead of using the `outputFormat: json2md` option compatable with [IonicaBizau/json2md ](https://github.com/IonicaBizau/json2md) (npm: [json2md](https://www.npmjs.com/package/json2md)), you can directly call this method:
 
 ```js
-const tokens = md2json.json2mdTokens('# Heading\n\nContent\n\n##Heading 1.1')
+const md2json = require('@connected-web/md2json')
+const tokens = md2json.json2mdTokens('# Heading\n\nContent\n\n## Heading 1.1')
 console.log(tokens)
 ```
 
@@ -96,13 +107,17 @@ Output:
     "h1": "Heading"
   },
   {
-    "p": [
-      "Content",
-      "##Heading 1.1"
-    ]
+    "p": "Content"
+  },
+  {
+    "h2": "Heading 1.1"
   }
 ]
 ```
+
+You can then feed these tokens back into `json2md` to create markdown again.
+
+Not all formats and formatting are supported; this isn't guarenteed as a fully backwards compatable transformation - but please [raise an issue](https://github.com/connected-web/md2json/issues/new) with an example.
 
 ## Approach
 
