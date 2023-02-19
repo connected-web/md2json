@@ -257,6 +257,34 @@
   },
   {
     "name": "h2",
+    "text": "Known Issues"
+  },
+  {
+    "name": "ul",
+    "text": "\nInline formats not fully supported, e.g.:\nbold and italic text will be reduced to plain text\nthe markdown equivalent of a <code>code block</code> will duplicate the code text into a new block\n\n\n"
+  },
+  {
+    "name": "li",
+    "text": "Inline formats not fully supported, e.g.:\nbold and italic text will be reduced to plain text\nthe markdown equivalent of a <code>code block</code> will duplicate the code text into a new block\n\n"
+  },
+  {
+    "name": "ul",
+    "text": "\nbold and italic text will be reduced to plain text\nthe markdown equivalent of a <code>code block</code> will duplicate the code text into a new block\n"
+  },
+  {
+    "name": "li",
+    "text": "bold and italic text will be reduced to plain text"
+  },
+  {
+    "name": "li",
+    "text": "the markdown equivalent of a <code>code block</code> will duplicate the code text into a new block"
+  },
+  {
+    "name": "code",
+    "text": "<code>code block</code>"
+  },
+  {
+    "name": "h2",
     "text": "Licenses"
   },
   {

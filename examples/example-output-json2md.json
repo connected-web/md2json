@@ -276,6 +276,26 @@
     "li": "Return JSON hierarchy"
   },
   {
+    "h2": "Known Issues"
+  },
+  {
+    "ul": [
+      "Inline formats not fully supported, e.g.:",
+      "bold and italic text will be reduced to plain text",
+      "the markdown equivalent of a <code>code block</code> will duplicate the code text into a new block"
+    ]
+  },
+  {
+    "li": "the markdown equivalent of a <code>code block</code> will duplicate the code text into a new block"
+  },
+  {
+    "code": {
+      "content": [
+        "<code>code block</code>"
+      ]
+    }
+  },
+  {
     "h2": "Licenses"
   },
   {

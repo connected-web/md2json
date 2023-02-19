@@ -196,6 +196,20 @@
           "sections": []
         },
         {
+          "title": "Known Issues",
+          "content": [
+            [
+              "Inline formats not fully supported, e.g.:\nbold and italic text will be reduced to plain text\nthe markdown equivalent of a <code>code block</code> will duplicate the code text into a new block\n\n"
+            ],
+            [
+              "bold and italic text will be reduced to plain text",
+              "the markdown equivalent of a <code>code block</code> will duplicate the code text into a new block"
+            ],
+            "<code>code block</code>"
+          ],
+          "sections": []
+        },
+        {
           "title": "Licenses",
           "content": [
             "Released under ISC."

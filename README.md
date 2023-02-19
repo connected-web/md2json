@@ -128,6 +128,12 @@ Not all formats and formatting are supported; this isn't guarenteed as a fully b
 - Parse Tokens into Hierarchy
 - Return JSON hierarchy
 
+## Known Issues
+
+- Inline formats not fully supported, e.g.:
+  - **bold** and *italic* text will be reduced to plain text
+  - the markdown equivalent of a `<code>code block</code>` will duplicate the code text into a new block
+
 ## Licenses
 
 Released under ISC.
