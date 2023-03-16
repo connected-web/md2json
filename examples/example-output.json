@@ -47,12 +47,12 @@
             [
               "Default example output: examples/example-output.json",
               "Default tokens output: examples/example-output-tokens.json",
-              "json2md tokens output: examples/example-output-tokens.json",
+              "json2md tokens output: examples/example-output-json2md.json",
               "Test output: examples/test-output.json"
             ],
             "examples/example-output.json",
             "examples/example-output-tokens.json",
-            "examples/example-output-tokens.json",
+            "examples/example-output-json2md.json",
             "examples/test-output.json"
           ],
           "sections": []
@@ -112,7 +112,7 @@
                 "outputFormat",
                 "The type of formatting to output.",
                 [
-                  "{ outputFormat: 'default' } : Empty string will default to default - nested structure of markdown as JSON",
+                  "{ outputFormat: 'default' } : Empty string will default to default - a nested structure of markdown as JSON",
                   "{ outputFormat: 'json2md' } : Token format compatable with IonicaBizau/json2md  (npm: json2md)"
                 ],
                 "{ outputFormat: 'default' }",
@@ -155,7 +155,7 @@
         {
           "title": "Tokens for json2md",
           "content": [
-            "Instead of using the outputFormat: json2md option compatable with IonicaBizau/json2md  (npm: json2md), you can directly call this method:",
+            "Instead of using the outputFormat: json2md option - which is compatable with IonicaBizau/json2md  (npm: json2md), you can directly call this method:",
             "outputFormat: json2md",
             [
               "const md2json = require('@connected-web/md2json')",
