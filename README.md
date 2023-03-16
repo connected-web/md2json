@@ -27,8 +27,8 @@ console.log('Markdown to Json:', json)
 ## Examples
 
 - Default example output: [`examples/example-output.json`](./examples/example-output.json)
-- Default tokens output: [`examples/example-output-tokens.json`](./examples/test-output.json)
-- json2md tokens output: [`examples/example-output-tokens.json`](./examples/test-output.json)
+- Default tokens output: [`examples/example-output-tokens.json`](./examples/example-output-tokens.json)
+- json2md tokens output: [`examples/example-output-tokens.json`](./examples/example-output-json2md.json)
 - Test output: [`examples/test-output.json`](./examples/test-output.json)
 
 ## Source only API
