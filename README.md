@@ -63,7 +63,7 @@ The text string representing the markdown to be converted to JSON
 
 The type of formatting to output.
 
-- `{ outputFormat: 'default' }` : Empty string will default to default - nested structure of markdown as JSON
+- `{ outputFormat: 'default' }` : Empty string will default to default - a nested structure of markdown as JSON
 - `{ outputFormat: 'json2md' }` : Token format compatable with [IonicaBizau/json2md ](https://github.com/IonicaBizau/json2md) (npm: [json2md](https://www.npmjs.com/package/json2md))
 
 ## Tokens
@@ -94,7 +94,7 @@ Output:
 
 ## Tokens for json2md 
 
-Instead of using the `outputFormat: json2md` option compatable with [IonicaBizau/json2md ](https://github.com/IonicaBizau/json2md) (npm: [json2md](https://www.npmjs.com/package/json2md)), you can directly call this method:
+Instead of using the `outputFormat: json2md` option - which is compatable with [IonicaBizau/json2md ](https://github.com/IonicaBizau/json2md) (npm: [json2md](https://www.npmjs.com/package/json2md)), you can directly call this method:
 
 ```js
 const md2json = require('@connected-web/md2json')
