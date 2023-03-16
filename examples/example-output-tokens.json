@@ -1,0 +1,418 @@
+[
+  {
+    "name": "h1",
+    "text": "Markdown 2 Json"
+  },
+  {
+    "name": "p",
+    "text": "A functional library that takes a markdown body; and tries to create a JSON representation of the document."
+  },
+  {
+    "name": "h2",
+    "text": "Supports"
+  },
+  {
+    "name": "ul",
+    "text": "\nHeadings\nLists\nParagraphs\n"
+  },
+  {
+    "name": "li",
+    "text": "Headings"
+  },
+  {
+    "name": "li",
+    "text": "Lists"
+  },
+  {
+    "name": "li",
+    "text": "Paragraphs"
+  },
+  {
+    "name": "h2",
+    "text": "Usage"
+  },
+  {
+    "name": "p",
+    "text": "Install:"
+  },
+  {
+    "name": "ul",
+    "text": "\nnpm install @connected-web/md2json\n"
+  },
+  {
+    "name": "li",
+    "text": "npm install @connected-web/md2json"
+  },
+  {
+    "name": "code",
+    "text": "npm install @connected-web/md2json"
+  },
+  {
+    "name": "code",
+    "text": "const md2json = require('@connected-web/md2json')\nconst fs = require('fs')\n\nconst filename = 'README.md'\nconst md = fs.readFileSync(filename, 'utf8')\nconst json = md2json(filename, md)\n\nconsole.log('Markdown to Json:', json)\n",
+    "language": "js"
+  },
+  {
+    "name": "h2",
+    "text": "Examples"
+  },
+  {
+    "name": "ul",
+    "text": "\nDefault example output: examples/example-output.json\nDefault tokens output: examples/example-output-tokens.json\njson2md tokens output: examples/example-output-tokens.json\nTest output: examples/test-output.json\n"
+  },
+  {
+    "name": "li",
+    "text": "Default example output: examples/example-output.json"
+  },
+  {
+    "name": "code",
+    "text": "examples/example-output.json"
+  },
+  {
+    "name": "li",
+    "text": "Default tokens output: examples/example-output-tokens.json"
+  },
+  {
+    "name": "code",
+    "text": "examples/example-output-tokens.json"
+  },
+  {
+    "name": "li",
+    "text": "json2md tokens output: examples/example-output-tokens.json"
+  },
+  {
+    "name": "code",
+    "text": "examples/example-output-tokens.json"
+  },
+  {
+    "name": "li",
+    "text": "Test output: examples/test-output.json"
+  },
+  {
+    "name": "code",
+    "text": "examples/test-output.json"
+  },
+  {
+    "name": "h2",
+    "text": "Source only API"
+  },
+  {
+    "name": "code",
+    "text": "md2json(markdown)\n",
+    "language": "js"
+  },
+  {
+    "name": "h2",
+    "text": "Title and source API"
+  },
+  {
+    "name": "code",
+    "text": "md2json(title, markdown)\n",
+    "language": "js"
+  },
+  {
+    "name": "h2",
+    "text": "Options object API"
+  },
+  {
+    "name": "code",
+    "text": "md2json({\n  title: 'README.md',\n  markdown: '# Heading\\n\\nContent'\n})\n",
+    "language": "js"
+  },
+  {
+    "name": "h3",
+    "text": "Option : title"
+  },
+  {
+    "name": "code",
+    "text": "title"
+  },
+  {
+    "name": "p",
+    "text": "The top level section of the JSON output."
+  },
+  {
+    "name": "h3",
+    "text": "Option : markdown | md"
+  },
+  {
+    "name": "code",
+    "text": "markdown"
+  },
+  {
+    "name": "code",
+    "text": "md"
+  },
+  {
+    "name": "p",
+    "text": "The text string representing the markdown to be converted to JSON"
+  },
+  {
+    "name": "h3",
+    "text": "Option : outputFormat"
+  },
+  {
+    "name": "code",
+    "text": "outputFormat"
+  },
+  {
+    "name": "p",
+    "text": "The type of formatting to output."
+  },
+  {
+    "name": "ul",
+    "text": "\n{ outputFormat: 'default' } : Empty string will default to default - nested structure of markdown as JSON\n{ outputFormat: 'json2md' } : Token format compatable with IonicaBizau/json2md  (npm: json2md)\n"
+  },
+  {
+    "name": "li",
+    "text": "{ outputFormat: 'default' } : Empty string will default to default - nested structure of markdown as JSON"
+  },
+  {
+    "name": "code",
+    "text": "{ outputFormat: 'default' }"
+  },
+  {
+    "name": "li",
+    "text": "{ outputFormat: 'json2md' } : Token format compatable with IonicaBizau/json2md  (npm: json2md)"
+  },
+  {
+    "name": "code",
+    "text": "{ outputFormat: 'json2md' }"
+  },
+  {
+    "name": "h2",
+    "text": "Tokens"
+  },
+  {
+    "name": "code",
+    "text": "const md2json = require('@connected-web/md2json')\nconst tokens = md2json.tokens('# Heading\\n\\nContent\\n\\n## Heading 1.1')\nconsole.log(tokens)\n",
+    "language": "js"
+  },
+  {
+    "name": "p",
+    "text": "Output:"
+  },
+  {
+    "name": "code",
+    "text": "[\n  {\n    \"name\": \"h1\",\n    \"text\": \"Heading\"\n  },\n  {\n    \"name\": \"p\",\n    \"text\": \"Content\"\n  },\n  {\n    \"name\": \"h2\",\n    \"text\": \"Heading 1.1\"\n  }\n]\n",
+    "language": "json"
+  },
+  {
+    "name": "h2",
+    "text": "Tokens for json2md"
+  },
+  {
+    "name": "p",
+    "text": "Instead of using the outputFormat: json2md option compatable with IonicaBizau/json2md  (npm: json2md), you can directly call this method:"
+  },
+  {
+    "name": "code",
+    "text": "outputFormat: json2md"
+  },
+  {
+    "name": "code",
+    "text": "const md2json = require('@connected-web/md2json')\nconst tokens = md2json.json2mdTokens('# Heading\\n\\nContent\\n\\n## Heading 1.1')\nconsole.log(tokens)\n",
+    "language": "js"
+  },
+  {
+    "name": "p",
+    "text": "Output:"
+  },
+  {
+    "name": "code",
+    "text": "[\n  {\n    \"h1\": \"Heading\"\n  },\n  {\n    \"p\": \"Content\"\n  },\n  {\n    \"h2\": \"Heading 1.1\"\n  }\n]\n",
+    "language": "json"
+  },
+  {
+    "name": "p",
+    "text": "You can then feed these tokens back into json2md to create markdown again."
+  },
+  {
+    "name": "code",
+    "text": "json2md"
+  },
+  {
+    "name": "p",
+    "text": "Not all formats and formatting are supported; this isn't guarenteed as a fully backwards compatable transformation - but please raise an issue with an example."
+  },
+  {
+    "name": "h2",
+    "text": "Approach"
+  },
+  {
+    "name": "ul",
+    "text": "\nFormat parameters\nRender Markdown as HTML\nCreate DOM from Markdown\nCreate Tokens in the form: { name: el.tagName, text: el.text }\nParse Tokens into Hierarchy\nReturn JSON hierarchy\n"
+  },
+  {
+    "name": "li",
+    "text": "Format parameters"
+  },
+  {
+    "name": "li",
+    "text": "Render Markdown as HTML"
+  },
+  {
+    "name": "li",
+    "text": "Create DOM from Markdown"
+  },
+  {
+    "name": "li",
+    "text": "Create Tokens in the form: { name: el.tagName, text: el.text }"
+  },
+  {
+    "name": "code",
+    "text": "{ name: el.tagName, text: el.text }"
+  },
+  {
+    "name": "li",
+    "text": "Parse Tokens into Hierarchy"
+  },
+  {
+    "name": "li",
+    "text": "Return JSON hierarchy"
+  },
+  {
+    "name": "h2",
+    "text": "Known Issues"
+  },
+  {
+    "name": "ul",
+    "text": "\nInline formats not fully supported, e.g.:\nbold and italic text will be reduced to plain text\nthe markdown equivalent of a <code>code block</code> will duplicate the code text into a new block\n\n\n"
+  },
+  {
+    "name": "li",
+    "text": "Inline formats not fully supported, e.g.:\nbold and italic text will be reduced to plain text\nthe markdown equivalent of a <code>code block</code> will duplicate the code text into a new block\n\n"
+  },
+  {
+    "name": "ul",
+    "text": "\nbold and italic text will be reduced to plain text\nthe markdown equivalent of a <code>code block</code> will duplicate the code text into a new block\n"
+  },
+  {
+    "name": "li",
+    "text": "bold and italic text will be reduced to plain text"
+  },
+  {
+    "name": "li",
+    "text": "the markdown equivalent of a <code>code block</code> will duplicate the code text into a new block"
+  },
+  {
+    "name": "code",
+    "text": "<code>code block</code>"
+  },
+  {
+    "name": "h2",
+    "text": "Licenses"
+  },
+  {
+    "name": "p",
+    "text": "Released under ISC."
+  },
+  {
+    "name": "h3",
+    "text": "Dependencies"
+  },
+  {
+    "name": "ul",
+    "text": "\nmarked\ncheerio\n"
+  },
+  {
+    "name": "li",
+    "text": "marked"
+  },
+  {
+    "name": "li",
+    "text": "cheerio"
+  },
+  {
+    "name": "h3",
+    "text": "Development tools"
+  },
+  {
+    "name": "ul",
+    "text": "\nmocha\nchai\nstandard\n"
+  },
+  {
+    "name": "li",
+    "text": "mocha"
+  },
+  {
+    "name": "li",
+    "text": "chai"
+  },
+  {
+    "name": "li",
+    "text": "standard"
+  },
+  {
+    "name": "h2",
+    "text": "Changelog"
+  },
+  {
+    "name": "h3",
+    "text": "1.3.0"
+  },
+  {
+    "name": "ul",
+    "text": "\nAdd options to support json2md compatible output\nSupport a broader range of HTML tokens, including blockquote, img, code, table, tr, th, td\n"
+  },
+  {
+    "name": "li",
+    "text": "Add options to support json2md compatible output"
+  },
+  {
+    "name": "li",
+    "text": "Support a broader range of HTML tokens, including blockquote, img, code, table, tr, th, td"
+  },
+  {
+    "name": "h3",
+    "text": "1.2.0"
+  },
+  {
+    "name": "ul",
+    "text": "\nFix failing tests based on marked interface\nAdd PR checking to project\n"
+  },
+  {
+    "name": "li",
+    "text": "Fix failing tests based on marked interface"
+  },
+  {
+    "name": "code",
+    "text": "marked"
+  },
+  {
+    "name": "li",
+    "text": "Add PR checking to project"
+  },
+  {
+    "name": "h3",
+    "text": "1.1.0"
+  },
+  {
+    "name": "ul",
+    "text": "\nAdd .tokens(markdown) method to API\n"
+  },
+  {
+    "name": "li",
+    "text": "Add .tokens(markdown) method to API"
+  },
+  {
+    "name": "code",
+    "text": ".tokens(markdown)"
+  },
+  {
+    "name": "h3",
+    "text": "1.0.0"
+  },
+  {
+    "name": "ul",
+    "text": "\nFirst version ready for release\nNot perfect, but hopefully something people can work with\n"
+  },
+  {
+    "name": "li",
+    "text": "First version ready for release"
+  },
+  {
+    "name": "li",
+    "text": "Not perfect, but hopefully something people can work with"
+  }
+]

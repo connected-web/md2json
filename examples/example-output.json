@@ -1,5 +1,5 @@
 {
-  "title": "README.md",
+  "title": "Example 1 - Markdown to JSON",
   "content": [],
   "sections": [
     {
@@ -26,6 +26,7 @@
             [
               "npm install @connected-web/md2json"
             ],
+            "npm install @connected-web/md2json",
             [
               "const md2json = require('@connected-web/md2json')",
               "const fs = require('fs')",
@@ -44,9 +45,15 @@
           "title": "Examples",
           "content": [
             [
-              "Example Output: examples/example-output.json",
-              "Test Output: examples/test-output.json"
-            ]
+              "Default example output: examples/example-output.json",
+              "Default tokens output: examples/example-output-tokens.json",
+              "json2md tokens output: examples/example-output-tokens.json",
+              "Test output: examples/test-output.json"
+            ],
+            "examples/example-output.json",
+            "examples/example-output-tokens.json",
+            "examples/example-output-tokens.json",
+            "examples/test-output.json"
           ],
           "sections": []
         },
@@ -85,6 +92,7 @@
             {
               "title": "Option : title",
               "content": [
+                "title",
                 "The top level section of the JSON output."
               ],
               "sections": []
@@ -92,7 +100,23 @@
             {
               "title": "Option : markdown | md",
               "content": [
+                "markdown",
+                "md",
                 "The text string representing the markdown to be converted to JSON"
+              ],
+              "sections": []
+            },
+            {
+              "title": "Option : outputFormat",
+              "content": [
+                "outputFormat",
+                "The type of formatting to output.",
+                [
+                  "{ outputFormat: 'default' } : Empty string will default to default - nested structure of markdown as JSON",
+                  "{ outputFormat: 'json2md' } : Token format compatable with IonicaBizau/json2md  (npm: json2md)"
+                ],
+                "{ outputFormat: 'default' }",
+                "{ outputFormat: 'json2md' }"
               ],
               "sections": []
             }
@@ -102,19 +126,61 @@
           "title": "Tokens",
           "content": [
             [
-              "const tokens = md2json.tokens('# Heading\\n\\nContent\\n\\n##Heading 1.1')",
+              "const md2json = require('@connected-web/md2json')",
+              "const tokens = md2json.tokens('# Heading\\n\\nContent\\n\\n## Heading 1.1')",
               "console.log(tokens)",
               ""
             ],
             "Output:",
             [
               "[",
-              "  { \"name\": \"h1\", \"text\": \"Heading\" },",
-              "  { \"name\": \"p\", \"text\": \"Content\"},",
-              "  { \"name\": \"h2\", \"text\": \"Heading 1.1\"}",
+              "  {",
+              "    \"name\": \"h1\",",
+              "    \"text\": \"Heading\"",
+              "  },",
+              "  {",
+              "    \"name\": \"p\",",
+              "    \"text\": \"Content\"",
+              "  },",
+              "  {",
+              "    \"name\": \"h2\",",
+              "    \"text\": \"Heading 1.1\"",
+              "  }",
               "]",
               ""
             ]
+          ],
+          "sections": []
+        },
+        {
+          "title": "Tokens for json2md",
+          "content": [
+            "Instead of using the outputFormat: json2md option compatable with IonicaBizau/json2md  (npm: json2md), you can directly call this method:",
+            "outputFormat: json2md",
+            [
+              "const md2json = require('@connected-web/md2json')",
+              "const tokens = md2json.json2mdTokens('# Heading\\n\\nContent\\n\\n## Heading 1.1')",
+              "console.log(tokens)",
+              ""
+            ],
+            "Output:",
+            [
+              "[",
+              "  {",
+              "    \"h1\": \"Heading\"",
+              "  },",
+              "  {",
+              "    \"p\": \"Content\"",
+              "  },",
+              "  {",
+              "    \"h2\": \"Heading 1.1\"",
+              "  }",
+              "]",
+              ""
+            ],
+            "You can then feed these tokens back into json2md to create markdown again.",
+            "json2md",
+            "Not all formats and formatting are supported; this isn't guarenteed as a fully backwards compatable transformation - but please raise an issue with an example."
           ],
           "sections": []
         },
@@ -128,7 +194,22 @@
               "Create Tokens in the form: { name: el.tagName, text: el.text }",
               "Parse Tokens into Hierarchy",
               "Return JSON hierarchy"
-            ]
+            ],
+            "{ name: el.tagName, text: el.text }"
+          ],
+          "sections": []
+        },
+        {
+          "title": "Known Issues",
+          "content": [
+            [
+              "Inline formats not fully supported, e.g.:\nbold and italic text will be reduced to plain text\nthe markdown equivalent of a <code>code block</code> will duplicate the code text into a new block\n\n"
+            ],
+            [
+              "bold and italic text will be reduced to plain text",
+              "the markdown equivalent of a <code>code block</code> will duplicate the code text into a new block"
+            ],
+            "<code>code block</code>"
           ],
           "sections": []
         },
@@ -166,12 +247,23 @@
           "content": [],
           "sections": [
             {
+              "title": "1.3.0",
+              "content": [
+                [
+                  "Add options to support json2md compatible output",
+                  "Support a broader range of HTML tokens, including blockquote, img, code, table, tr, th, td"
+                ]
+              ],
+              "sections": []
+            },
+            {
               "title": "1.2.0",
               "content": [
                 [
                   "Fix failing tests based on marked interface",
                   "Add PR checking to project"
-                ]
+                ],
+                "marked"
               ],
               "sections": []
             },
@@ -180,7 +272,8 @@
               "content": [
                 [
                   "Add .tokens(markdown) method to API"
-                ]
+                ],
+                ".tokens(markdown)"
               ],
               "sections": []
             },

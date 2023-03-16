@@ -1,6 +1,6 @@
 {
   "name": "@connected-web/md2json",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A functional library that takes a markdown body; and tries to create a JSON representation of the document.",
   "main": "src/md2json.js",
   "files": [
@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "chai": "^4.3.6",
+    "json2md": "^2.0.0",
     "mocha": "^9.2.2",
     "standard": "^16.0.4"
   }

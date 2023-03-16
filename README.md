@@ -26,8 +26,10 @@ console.log('Markdown to Json:', json)
 
 ## Examples
 
-- Example Output: [`examples/example-output.json`](./examples/example-output.json)
-- Test Output: [`examples/test-output.json`](./examples/test-output.json)
+- Default example output: [`examples/example-output.json`](./examples/example-output.json)
+- Default tokens output: [`examples/example-output-tokens.json`](./examples/test-output.json)
+- json2md tokens output: [`examples/example-output-tokens.json`](./examples/test-output.json)
+- Test output: [`examples/test-output.json`](./examples/test-output.json)
 
 ## Source only API
 
@@ -57,21 +59,67 @@ The top level section of the JSON output.
 
 The text string representing the markdown to be converted to JSON
 
+### Option : `outputFormat`
+
+The type of formatting to output.
+
+- `{ outputFormat: 'default' }` : Empty string will default to default - nested structure of markdown as JSON
+- `{ outputFormat: 'json2md' }` : Token format compatable with [IonicaBizau/json2md ](https://github.com/IonicaBizau/json2md) (npm: [json2md](https://www.npmjs.com/package/json2md))
+
 ## Tokens
 
 ```js
-const tokens = md2json.tokens('# Heading\n\nContent\n\n##Heading 1.1')
+const md2json = require('@connected-web/md2json')
+const tokens = md2json.tokens('# Heading\n\nContent\n\n## Heading 1.1')
 console.log(tokens)
 ```
 
 Output:
 ```json
 [
-  { "name": "h1", "text": "Heading" },
-  { "name": "p", "text": "Content"},
-  { "name": "h2", "text": "Heading 1.1"}
+  {
+    "name": "h1",
+    "text": "Heading"
+  },
+  {
+    "name": "p",
+    "text": "Content"
+  },
+  {
+    "name": "h2",
+    "text": "Heading 1.1"
+  }
 ]
 ```
+
+## Tokens for json2md 
+
+Instead of using the `outputFormat: json2md` option compatable with [IonicaBizau/json2md ](https://github.com/IonicaBizau/json2md) (npm: [json2md](https://www.npmjs.com/package/json2md)), you can directly call this method:
+
+```js
+const md2json = require('@connected-web/md2json')
+const tokens = md2json.json2mdTokens('# Heading\n\nContent\n\n## Heading 1.1')
+console.log(tokens)
+```
+
+Output:
+```json
+[
+  {
+    "h1": "Heading"
+  },
+  {
+    "p": "Content"
+  },
+  {
+    "h2": "Heading 1.1"
+  }
+]
+```
+
+You can then feed these tokens back into `json2md` to create markdown again.
+
+Not all formats and formatting are supported; this isn't guarenteed as a fully backwards compatable transformation - but please [raise an issue](https://github.com/connected-web/md2json/issues/new) with an example.
 
 ## Approach
 
@@ -81,6 +129,12 @@ Output:
 - Create Tokens in the form: `{ name: el.tagName, text: el.text }`
 - Parse Tokens into Hierarchy
 - Return JSON hierarchy
+
+## Known Issues
+
+- Inline formats not fully supported, e.g.:
+  - **bold** and *italic* text will be reduced to plain text
+  - the markdown equivalent of a `<code>code block</code>` will duplicate the code text into a new block
 
 ## Licenses
 
@@ -98,6 +152,11 @@ Released under ISC.
 - standard
 
 ## Changelog
+
+### 1.3.0
+
+- Add options to support json2md compatible output
+- Support a broader range of HTML tokens, including blockquote, img, code, table, tr, th, td
 
 ### 1.2.0
 
