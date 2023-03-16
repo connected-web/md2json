@@ -53,12 +53,24 @@
   },
   {
     "ul": [
-      "Example Output: examples/example-output.json",
-      "Test Output: examples/test-output.json"
+      "Default example output: examples/example-output.json",
+      "Default tokens output: examples/example-output-tokens.json",
+      "json2md tokens output: examples/example-output-tokens.json",
+      "Test output: examples/test-output.json"
     ]
   },
   {
-    "li": "Test Output: examples/test-output.json"
+    "li": "json2md tokens output: examples/example-output-tokens.json"
+  },
+  {
+    "code": {
+      "content": [
+        "examples/example-output-tokens.json"
+      ]
+    }
+  },
+  {
+    "li": "Test output: examples/test-output.json"
   },
   {
     "code": {

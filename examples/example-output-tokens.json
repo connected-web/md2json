@@ -58,11 +58,11 @@
   },
   {
     "name": "ul",
-    "text": "\nExample Output: examples/example-output.json\nTest Output: examples/test-output.json\n"
+    "text": "\nDefault example output: examples/example-output.json\nDefault tokens output: examples/example-output-tokens.json\njson2md tokens output: examples/example-output-tokens.json\nTest output: examples/test-output.json\n"
   },
   {
     "name": "li",
-    "text": "Example Output: examples/example-output.json"
+    "text": "Default example output: examples/example-output.json"
   },
   {
     "name": "code",
@@ -70,7 +70,23 @@
   },
   {
     "name": "li",
-    "text": "Test Output: examples/test-output.json"
+    "text": "Default tokens output: examples/example-output-tokens.json"
+  },
+  {
+    "name": "code",
+    "text": "examples/example-output-tokens.json"
+  },
+  {
+    "name": "li",
+    "text": "json2md tokens output: examples/example-output-tokens.json"
+  },
+  {
+    "name": "code",
+    "text": "examples/example-output-tokens.json"
+  },
+  {
+    "name": "li",
+    "text": "Test output: examples/test-output.json"
   },
   {
     "name": "code",
